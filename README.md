@@ -1,3 +1,3 @@
 # cakeisaliebot
 
-A simple bot that explains that the cake is a lie.
+A simple reddit bot that explains that the cake is a lie.
