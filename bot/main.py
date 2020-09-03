@@ -1,4 +1,5 @@
 import re
+import time
 
 import praw
 from bot_login import login
@@ -16,6 +17,7 @@ def reply_to_comment(comment):
     if allowed_to_post(comment.subreddit):
         try:
             comment.reply(reply.text)
+            print('Replied, comment.id: ', comment.id)
         except Exception as e:
             warn("REPLY FAILED: %s @ %s"%(e,post.subreddit))
             if str(e) == '403 Client Error: Forbidden':
