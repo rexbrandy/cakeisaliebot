@@ -19,9 +19,9 @@ def reply_to_comment(comment):
             comment.reply(reply_text)
             print('Replied, comment.id: ', comment.id)
         except Exception as e:
-            print("REPLY FAILED: %s @ %s"%(e,post.subreddit))
+            print("REPLY FAILED: %s @ %s"%(e, comment.subreddit))
             if str(e) == '403 Client Error: Forbidden':
-                BANNED_SUBS.append(post.subreddit)
+                BANNED_SUBS.append(comment.subreddit)
 
 def already_replied(comment):
     if not comment.replies:
@@ -49,5 +49,5 @@ if __name__ == '__main__':
         if not already_replied(matching_comment):
             reply_to_comment(matching_comment)
 
-            time.sleep(5)
+            time.sleep(300)
 
