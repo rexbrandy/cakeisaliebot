@@ -40,7 +40,7 @@ def parse_comments(r):
             return comment
 
 
-def run():
+if __name__ == '__main__':
     reddit = login()
     
     while True:
